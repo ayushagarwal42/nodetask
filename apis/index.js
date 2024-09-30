@@ -89,7 +89,11 @@ app.use(express.json());//use Body-Parsing Middleware:
 app.use(express.urlencoded({ extended: true })); // Use urlencoded to handle form data
 
 const userroute = require("./routes/userroutes");
+const productroute = require("./routes/productroutes");
+const warehouseroute = require("./routes/warehouseroutes");
 app.use("/", userroute);
+app.use("/", productroute);
+app.use("/", warehouseroute);
 
 const port = 3000;
 app.listen(port, () => {

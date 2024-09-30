@@ -15,7 +15,7 @@ const productSchema = new mongoose.Schema({
     },
     warehouse: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Warehouse',
+        ref: 'warehouse',
         required: true,
     }
 });
