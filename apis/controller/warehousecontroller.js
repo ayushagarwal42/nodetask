@@ -2,11 +2,14 @@ const Warehouse = require('../models/warehouseSchema');
 
 exports.addWarehouse = async (req, res) => {
     try {
-        const { name, location } = req.body;
+        const { name, longitude, latitude } = req.body;
 
         const newWarehouse = new Warehouse({
             name,
-            location,
+            location: {
+                type: 'Point',
+                coordinates: [longitude, latitude], // Store as [longitude, latitude]
+            },
         });
 
         await newWarehouse.save();
