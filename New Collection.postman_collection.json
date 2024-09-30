@@ -240,7 +240,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"pehlawarehouse\",\r\n    \"location\":\"Noida\"\r\n}",
+					"raw": "{\r\n    \"name\":\"pehlawarehouse\",\r\n    \"longitude\": -73.935242,\r\n    \"latitude\": 40.730610\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -256,6 +256,63 @@
 					"port": "3000",
 					"path": [
 						"addwarehouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/addproduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"redmi\",\r\n    \"quantity\":10,\r\n    \"price\":10000,\r\n    \"warehouseId\":\"66fa4ea50bf39ebab00801ab\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/addproduct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addproduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/getProductsByLocation?latitude=40.730610&longitude=-73.935242",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/getProductsByLocation?latitude=40.730610&longitude=-73.935242",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getProductsByLocation"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "40.730610"
+						},
+						{
+							"key": "longitude",
+							"value": "-73.935242"
+						}
 					]
 				}
 			},
