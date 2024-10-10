@@ -1,4 +1,6 @@
+//apis\models\userschema.js
 const mongoose = require("mongoose");
+// const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
   firstname: {
@@ -42,6 +44,10 @@ const userSchema = new mongoose.Schema({
   }
 
 })
+// Method to compare password
+// userSchema.methods.comparePassword = function(candidatePassword) {
+//   return bcrypt.compare(candidatePassword, this.password);
+// };
 
 const users = mongoose.model("users", userSchema);
 
